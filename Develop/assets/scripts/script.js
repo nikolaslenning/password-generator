@@ -1,27 +1,71 @@
-// //GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+function generatePassword () { 
+  //Define Character variables
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
+var lowercase = "abcdefghijklmnopqrstuvwxyz" ;
+var numeric = "1234567890" ;
+var special = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~" ;
+// special characters list - https://owasp.org/www-community/password-special-characters
+var charactersToUse = ''
+
+  var passwordLength = prompt("Please choose a character length between 8 and 128");
+  console.log('user selected a length of', passwordLength)
+  // generate numbers, letters, symbols
+  if(passwordLength >128 || passwordLength <8) {
+    alert( "nope")
+    generatePassword();
+  
+  }
+  //start asking for uppercase, lowercase
+  var useUpperCase = confirm("Use uppercase?");
+  console.log('Should I use uppercase letters?', useUpperCase) 
+  
+  var useLowerCase = confirm("Use lowercase?");
+  console.log('Should I use uppercase letters?', useLowerCase) 
+ 
+  var useNumeric = confirm("Use Numeric characters?");
+  console.log('Should I use numeric characters?', useNumeric) 
+ 
+  var useSpecial = confirm("Use special?");
+  console.log('Should I use Special characters?', useSpecial) 
+
+  // if(useUpperCase) {
+  //   charactersToUse += uppercase
+  // }
+  if(useUpperCase) {
+    charactersToUse = charactersToUse.concat(uppercase) ;
+  }
+  if(useLowerCase) {
+    charactersToUse = charactersToUse.concat(lowercase) ;
+  }
+  if(useNumeric) {
+    charactersToUse = charactersToUse.concat(numeric) ;
+  }
+  if(useSpecial) {
+    charactersToUse = charactersToUse.concat(special)
+  }
+  console.log(charactersToUse)
+
+}
+
+ //add characters selected to password based on selected length that loops. at each step adds character from characters to use at random index. use for loop
+
+
+
+
+
+
 // Write password to the #password input
 function writePassword() {
+  console.log("writePassword is running");
   var password = generatePassword();
+
+  console.log(password)
   var passwordText = document.querySelector("#password");
+
+  console.log(passwordText);
 
   passwordText.value = password;
 
@@ -29,18 +73,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//Define Character variables
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
-var lowercase = "abcdefghijklmnopqrstuvwxyz" ;
-var numeric = "1234567890" ;
-var special = " !#$%&()*+,-./:;<=>?@[\]^_`{|}~" ;
-// special characters list -   https://owasp.org/www-community/password-special-characters
-var length = prompt("Please choose a character length between 8 and 128");
-
-//If statement that defines character count 
-if (8 > length || length > 128) {
-  alert( "Length all wrong, try again.")
-}else{
-
-}
