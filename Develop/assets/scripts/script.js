@@ -9,9 +9,10 @@ function generatePassword () {
   var special = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~" ;
   // special characters list - https://owasp.org/www-community/password-special-characters
   var charactersToUse = ''
+  var passwordChars = ''
 
   var passwordLength = prompt("Please choose a character length between 8 and 128");
-  console.log('user selected a length of', passwordLength)
+  
   // generate numbers, letters, symbols
   if(passwordLength >128 || passwordLength <8) {
     alert( "Invalid Length - Please choose a Character length between 8 and 128")
@@ -19,18 +20,14 @@ function generatePassword () {
   
   }
   //start asking for uppercase, lowercase
-  var useUpperCase = confirm("Use uppercase?");
-  console.log('Should I use uppercase letters?', useUpperCase) 
+  var useUpperCase = confirm("Use uppercase?");   
   
   var useLowerCase = confirm("Use lowercase?");
-  console.log('Should I use uppercase letters?', useLowerCase) 
- 
+  
   var useNumeric = confirm("Use Numeric characters?");
-  console.log('Should I use numeric characters?', useNumeric) 
- 
+  
   var useSpecial = confirm("Use special?");
-  console.log('Should I use Special characters?', useSpecial) 
- 
+  
   if(useUpperCase) {
     charactersToUse = charactersToUse.concat(uppercase) ;
   }
@@ -47,7 +44,8 @@ function generatePassword () {
   for( var i = 0 ; i < passwordLength; i++) {
     var pickChar = charactersToUse[Math.floor(Math.random() * charactersToUse.length)] ;
     console.log(pickChar);
-    // password.push(pickChar);
+    
+
   }
 }
 
