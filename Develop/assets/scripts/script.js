@@ -41,14 +41,17 @@ function generatePassword () {
   if(useSpecial) {
     charactersToUse = charactersToUse.concat(special)
   }
-  // For-loop  generates random index of characterToUse and assigns value to pickChar. loops through number of times equal to password length
+  // For-loop  generates random index. Uses random index to select from and assigns value to pickChar. loops through number of times equal to password length
   for( var i = 0 ; i < passwordLength; i++) {
     var pickChar = charactersToUse[Math.floor(Math.random() * charactersToUse.length)] ;
-    console.log(pickChar);
-    
+    // console.log(pickChar);
+    var passwordChars = passwordChars.concat(pickChar);
   }
+  console.log(passwordChars)
+    alert(passwordChars)
   //add characters selected to password based on selected length that loops. at each step adds character from charactersToUse at random index. use for-loop
-  for( var j = 0 ; j <)
+  // for( var j = 0 ; j <passwordLength; j++) {
+  // }
 
 }
 
