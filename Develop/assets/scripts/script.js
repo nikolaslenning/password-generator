@@ -13,13 +13,13 @@ function generatePassword () {
 
   var passwordLength = prompt("Please choose a character length between 8 and 128");
   
-  // generate numbers, letters, symbols
+  // If statement that starts generatePassword function over if password length doesn't fall in between range
   if(passwordLength >128 || passwordLength <8) {
     alert( "Invalid Length - Please choose a Character length between 8 and 128")
     generatePassword();
   
   }
-  //start asking for uppercase, lowercase
+  //Confirm use of uppercase, lowercase, numeric, and special characters and stores as variable
   var useUpperCase = confirm("Use uppercase?");   
   
   var useLowerCase = confirm("Use lowercase?");
@@ -28,6 +28,7 @@ function generatePassword () {
   
   var useSpecial = confirm("Use special?");
   
+  //If statement- stores characters selected from confirm and adds them inside the var passwordChars = '__*__' 
   if(useUpperCase) {
     charactersToUse = charactersToUse.concat(uppercase) ;
   }
@@ -45,11 +46,12 @@ function generatePassword () {
     var pickChar = charactersToUse[Math.floor(Math.random() * charactersToUse.length)] ;
     console.log(pickChar);
     
-
   }
+  //add characters selected to password based on selected length that loops. at each step adds character from charactersToUse at random index. use for-loop
+  for( var j = 0 ; j <)
+
 }
 
- //add characters selected to password based on selected length that loops. at each step adds character from charactersToUse at random index. use for-loop
 
 
 // Write password to the #password input
