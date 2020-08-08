@@ -5,7 +5,7 @@ Password Generator is repository where I have created an application that genera
 
 ![Webpage screenshot](Assets/Screenshot.png)
 
-[Password Special Characters](https://www.owasp.org/index.php/Password_special_characters) was used to reference character list. 
+[Password Special Characters](https://www.owasp.org/index.php/Password_special_characters) was used to reference special characters list. 
 
 A live link to my [Password Generator](https://nikolaslenning.github.io/password-generator/) is hosted on Github pages.
 

@@ -48,6 +48,7 @@ function generatePassword () {
     var pickChar = charactersToUse[Math.floor(Math.random() * charactersToUse.length)] ;
     var passwordChars = passwordChars.concat(pickChar);    
   }
+  // returns passwordChars to password window
   return passwordChars;
  
 }
