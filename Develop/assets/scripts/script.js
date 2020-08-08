@@ -6,7 +6,7 @@ function generatePassword () {
   var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;
   var lowercase = "abcdefghijklmnopqrstuvwxyz" ;
   var numeric = "1234567890" ;
-  var special = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~" ;
+  var special = "!#$%&()*+,-./:;<=>?@][^_`{|}~" ;
   // special characters list - https://owasp.org/www-community/password-special-characters
   
   // Empty vars that allow you to add characters 
@@ -22,13 +22,13 @@ function generatePassword () {
   
   }
   //Confirm use of uppercase, lowercase, numeric, and special characters and stores in variable
-  var useUpperCase = confirm("Use uppercase?");   
+  var useUpperCase = confirm("Use uppercase characters?");   
   
-  var useLowerCase = confirm("Use lowercase?");
+  var useLowerCase = confirm("Use lowercase characters?");
   
   var useNumeric = confirm("Use Numeric characters?");
   
-  var useSpecial = confirm("Use special?");
+  var useSpecial = confirm("Use special? characters?");
   
   //If statement- takes confirmed variables and stores characters selected as a variable and stores variable inside the var charactersToUse = '__*__' 
   if(useUpperCase) {
@@ -49,16 +49,9 @@ function generatePassword () {
     var passwordChars = passwordChars.concat(pickChar);    
   }
   return passwordChars;
-  //
-  // console.log(passwordChars)
-  //   alert(passwordChars)
-  //add characters selected to password based on selected length that loops. at each step adds character from charactersToUse at random index. use for-loop
-  
-
+ 
 }
  
-
-
 // Write password to the #password input
 function writePassword() {
   // console.log("writePassword is running");
